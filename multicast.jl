@@ -7,7 +7,6 @@ addprocs(10)
 @everywhere g = workers()
 
 @everywhere function B_deliver(R_deliver, m)
-    sleep(1)
     if(!(m in received))
         push!(received,m)
         sync_B_multicast(g,m,R_deliver)
